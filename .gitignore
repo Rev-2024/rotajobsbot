@@ -1,0 +1,11 @@
+# Secrets and local data: never upload these to GitHub
+.env
+*.db
+*.sqlite3
+
+# Python junk
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/

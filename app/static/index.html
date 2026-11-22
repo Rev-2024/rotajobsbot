@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17458f">
+  <title>Rotary Jobs Connect</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <noscript><p class="noscript">This chat needs JavaScript. Please turn it on and reload.</p></noscript>
+
+  <main id="auth" class="auth" hidden>
+    <div class="auth-card">
+      <h1>Rotary Jobs Connect</h1>
+      <p class="lead">Rotarians share job openings. Rotaractors apply. All in one chat.</p>
+
+      <div class="tabs" role="tablist" aria-label="Account">
+        <button type="button" role="tab" id="tab-signin" aria-selected="true">Sign in</button>
+        <button type="button" role="tab" id="tab-signup" aria-selected="false">Create account</button>
+      </div>
+
+      <form id="auth-form" novalidate>
+        <label for="phone">Mobile number</label>
+        <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="98765 43210" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="At least 6 characters" required>
+
+        <div id="invite-row" hidden>
+          <label for="invite">Club invite code</label>
+          <input id="invite" name="invite" type="text" autocomplete="off" placeholder="Ask your club coordinator">
+        </div>
+
+        <p id="auth-error" class="error" role="alert"></p>
+        <button id="auth-submit" class="primary" type="submit">Sign in</button>
+      </form>
+    </div>
+  </main>
+
+  <div id="chat" class="chat" hidden>
+    <header class="bar">
+      <h1>Rotary Jobs Connect</h1>
+      <div class="actions">
+        <button id="menu-btn" type="button">Menu</button>
+        <button id="logout-btn" type="button">Sign out</button>
+      </div>
+    </header>
+
+    <div id="log" class="log" role="log" aria-live="polite" aria-label="Conversation"></div>
+
+    <form id="composer" class="composer">
+      <label for="message" class="sr-only">Your message</label>
+      <input id="message" type="text" autocomplete="off" maxlength="1000" placeholder="Type a message…">
+      <button id="send" class="primary" type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
